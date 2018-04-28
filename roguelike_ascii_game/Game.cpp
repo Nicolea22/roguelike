@@ -1,24 +1,35 @@
 #include "Game.h"
+#include <iostream>
+#include <conio.h>
 
 Game::Game()
 {
 	inGame = true;
-	player = Player();
-	map = Map();
+	char identifier;
+
+	cout << "Please insert your character to use as an avatar" << endl;
+	cin >> identifier;
+	cout << endl;
+	
+	canvas = Canvas(identifier);
 }
 
 Game::~Game() {}
 
 void Game::update()
 {
-	player.update();
-	map.update();
+	//canvas.update();
 }
 
 void Game::draw()
 {
-	player.draw();
-	map.draw();
+	canvas.draw();
+}
+
+void Game::clearScreen() 
+{
+	string clearScreenString(35, '\n');
+	cout << clearScreenString;
 }
 
 void Game::loop()
@@ -27,8 +38,7 @@ void Game::loop()
 	{
 		update();
 		draw();
+		clearScreen();
+		_getch();
 	}
 }
-
-
-

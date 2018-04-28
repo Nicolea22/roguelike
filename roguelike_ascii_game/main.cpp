@@ -2,15 +2,19 @@
 #include <fstream>
 #include <iostream>
 #include "Game.h"
-#include "FileManager.h" 
+#include "Canvas.h"
 
-int main() 
+
+int main()
 {
 	Game game = Game();
-	//game.loop();
+	game.completeAvatar();
+	game.callCanvasConstructor();
+	game.loop();
 
 	int x;
 	cin >> x;
 
 	return 0;
 }
+

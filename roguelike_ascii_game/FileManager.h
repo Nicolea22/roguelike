@@ -6,51 +6,24 @@
 
 using namespace std;
 
-static char** LoadMapFromFile()
+static vector<string> LoadMapFromFile(string file)
 {
-	char** map;
-	
-	int height_map;
+	vector<string> map;
 
 	ifstream inputfile;
-
 	string line;
 
-	inputfile.open("test2.txt");
+	inputfile.open(file);
 
 	if (inputfile.fail()) 
 	{
-		perror("test2.txt");
+		perror(file.c_str());
 	}
-	
-	getline(inputfile, line);
-	char* lineArray = const_cast<char*>(line.c_str());
-
-	if (lineArray[0] = '-')
-	{
-		height_map = lineArray[1] - '0';
-	}
-
-	map = new char*[height_map];
-	int i = 0;
 
 	while (getline(inputfile, line)) 
 	{
-		
-		char* lineArray = const_cast<char*>(line.c_str());
-
-		if (lineArray[0] == '\\')
-		{
-			char* aux = &lineArray[1];
-			aux[line.size() - 1] = '\n';
-			while (aux[i] != '\n')
-			{
-				cout << aux[i];
-				i++;
-			}
-			i = 0;
-		}
-		
+		map.push_back(line);
 	}
+
 	return map;
 }
