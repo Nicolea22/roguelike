@@ -1,2 +1,8 @@
-﻿  Game.cpp
-  roguelike_ascii_game.vcxproj -> C:\Users\Leandro\source\repos\roguelike_ascii_game\Debug\roguelike_ascii_game.exe
+﻿  Canvas.cpp
+  Game.cpp
+  Level.cpp
+  main.cpp
+  Player.cpp
+  Room.cpp
+  Generando código...
+c:\users\leandro\source\repos\roguelike_ascii_game\roguelike_ascii_game\room.cpp(41): error C4716: 'Room::getCharAt': debe devolver un valor

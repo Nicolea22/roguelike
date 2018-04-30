@@ -1,15 +1,13 @@
 #include <stdio.h>
-#include <fstream>
 #include <iostream>
+#include <vector>
 #include "Game.h"
-#include "Canvas.h"
 
+using namespace std;
 
 int main()
 {
 	Game game = Game();
-	game.completeAvatar();
-	game.callCanvasConstructor();
 	game.loop();
 
 	int x;

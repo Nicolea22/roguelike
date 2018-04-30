@@ -1,20 +1,27 @@
-#pragma once
+#ifndef CANVAS_H
+#define CANVAS_H
 #include <iostream>
+#include "Level.h"
 #include "Player.h"
-#include "Map.h"
+
+using namespace std;
 
 class Canvas
 {
 public:
 
 	Canvas();
-	Canvas(char);
+	Canvas(char, int);
 	~Canvas();
 
 	void draw();
 	void update();
 
 private:
-	Player player;
-	Map map;
+	Player _player;
+	int _levels_amount;
+	vector <Level> _levels;
+	Level _actLevel;
 };
+
+#endif

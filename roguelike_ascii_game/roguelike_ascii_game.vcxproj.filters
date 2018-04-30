@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de origen\Level1">
+      <UniqueIdentifier>{1f7686ba-101f-4be4-88fc-3e1fce3e49b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Level2">
+      <UniqueIdentifier>{0aed0f11-7b6c-4d11-8238-e5fe848035ac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -28,6 +34,21 @@
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
     <ClCompile Include="Canvas.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,13 +68,34 @@
     <ClInclude Include="Canvas.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="test.txt">
-      <Filter>Archivos de origen</Filter>
+    <Text Include="levels\level1\2.txt">
+      <Filter>Archivos de origen\Level1</Filter>
     </Text>
-    <Text Include="test2.txt">
-      <Filter>Archivos de origen</Filter>
+    <Text Include="levels\level1\1.txt">
+      <Filter>Archivos de origen\Level1</Filter>
+    </Text>
+    <Text Include="1.txt">
+      <Filter>Archivos de origen\Level2</Filter>
+    </Text>
+    <Text Include="2.txt">
+      <Filter>Archivos de origen\Level2</Filter>
     </Text>
   </ItemGroup>
 </Project>

@@ -2,31 +2,50 @@
 
 Canvas::Canvas() {}
 
-Canvas::Canvas(char identifier)
+Canvas::Canvas(char identifier, int levelsAmount)
 {
-	map = Map();
+	_player = Player(4, 1, identifier, 10);
+	_levels_amount = levelsAmount;
 
-	player = Player(2, 1, identifier);
-	map.setCharAt(player.getX(), player.getY(), player.getIdentifier());
+	for (int i = 0; i < levelsAmount; i++) 
+	{
+		_levels[i] = Level();
+	}
+
+	_actLevel = _levels[0];
 }
 
 Canvas::~Canvas() {}
 
+/*
+*	Draw all the game's objects, even the map
+*/
 void Canvas::draw()
 {
-	vector<string> auxMap = map.getMap();
+	cout << "\t   ******************************" << endl;
+	cout << "\t   *\tASCII ROGUELIKE GAME\t*"<< endl;
+	cout << "\t   ******************************" << endl;
 
-	for (int y = 0; y < auxMap.size(); y++) 
+	cout << endl;
+	cout << "life: " << _player.getLife();
+	cout << "\t\t\t\t    score: " << _player.getScore() << endl;
+	/*
+	vector<string> roomAux = level.getActualRoom();
+
+	for (int y = 0; y < roomAux.size(); y++) 
 	{
-		for (int x = 0; x < auxMap[y].size(); x++) 
+		for (int x = 0; x < roomAux[y].size(); x++)
 		{
-			cout << auxMap[y][x];
+			cout << roomAux[y][x];
 		}
 		cout << endl;
 	}
+	*/
 }
+
 
 void Canvas::update() 
 {
-	//map.setCharAt(player.getX(), player.getY(), player.getIdentifier());
+	_player.update();
+	_actLevel.setCharAt(_player.getPosition(), _player.getLastPosition(), _player.getIdentifier());
 }

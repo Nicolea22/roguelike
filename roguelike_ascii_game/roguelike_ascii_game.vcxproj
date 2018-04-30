@@ -116,21 +116,33 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Position.cpp" />
+    <ClCompile Include="Room.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Canvas.h" />
+    <ClInclude Include="Debug.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Level.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Position.h" />
+    <ClInclude Include="Room.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="test.txt" />
-    <Text Include="test2.txt" />
+    <Text Include="1.txt" />
+    <Text Include="2.txt" />
+    <Text Include="levels\level1\1.txt" />
+    <Text Include="levels\level1\2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

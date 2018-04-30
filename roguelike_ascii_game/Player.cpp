@@ -3,21 +3,45 @@
 
 Player::Player() {}
 
-Player::Player(int x, int y, char identifier)
+Player::Player(int x, int y, char identifier, int life)
 {
-	this->identifier = identifier;
-	this->x = x;
-	this->y = y;
+	_identifier = identifier;	
+	_position = Position(x, y);
+	_life = life;
+	_score = 0;
 }
+
+Player::Player(Position position, char identifier, int life)
+{
+	_identifier = identifier;
+	_position = position;
+	_life = life;
+	_score = 0;
+}
+
+
 
 Player::~Player(){}
 
 void Player::update()
 {
+	_lastPosition.setPosition(_position.getX(), _position.getY());
 	input = _getch();
-}
-
-void Player::draw()
-{
-
+	switch (input)
+	{
+	case 'w':
+		_position.setY(_position.getY() - 1);
+		break;
+	case 'a':
+		_position.setX(_position.getX() - 1);
+		break;
+	case 's':
+		_position.setY(_position.getY() + 1);
+		break;
+	case 'd':
+		_position.setX(_position.getX() + 1);
+		break;
+	default:
+		break;
+	}
 }

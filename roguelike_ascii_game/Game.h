@@ -1,9 +1,13 @@
-#pragma once
+#ifndef GAME_H
+#define GAME_H
 #include "Canvas.h"
 
-class Game
 
+
+class Game
 {
+const int LEVELS_AMOUNT = 1;
+
 public:
 
 	// constructors / deconstructors
@@ -14,9 +18,6 @@ public:
 	void loop();
 	bool GetInGame() { return inGame; }
 
-	void completeAvatar();
-	void callCanvasConstructor();
-
 private:
 
 	// methods
@@ -26,8 +27,8 @@ private:
 	bool inGame;
 	Canvas canvas;
 
-	char identifier;
-
 	void update();
 	void draw();
 };
+
+#endif
