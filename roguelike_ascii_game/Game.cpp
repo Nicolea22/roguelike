@@ -30,7 +30,7 @@ void Game::draw()
 
 void Game::clearScreen()
 {
-	string ClearScreenString(35, '\n');
+	string ClearScreenString(100, '\n');
 	cout << ClearScreenString;
 }
 
