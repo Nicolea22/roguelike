@@ -1,2 +1,3 @@
 ﻿  Level.cpp
-  roguelike_ascii_game.vcxproj -> C:\Users\Leandro\source\repos\roguelike_ascii_game\Debug\roguelike_ascii_game.exe
+c:\users\leandro\source\repos\roguelike\roguelike_ascii_game\level.cpp(21): warning C4018: '<': signed/unsigned mismatch
+  roguelike_ascii_game.vcxproj -> C:\Users\Leandro\source\repos\roguelike\Debug\roguelike_ascii_game.exe

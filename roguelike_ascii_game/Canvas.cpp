@@ -9,10 +9,10 @@ Canvas::Canvas(char identifier, int levelsAmount)
 
 	for (int i = 0; i < levelsAmount; i++) 
 	{
-		_levels[i] = Level();
+		_levels[i] = Level(_player);
 	}
 
-	_actLevel = _levels[0];
+	_act_level = _levels[0];
 }
 
 Canvas::~Canvas() {}

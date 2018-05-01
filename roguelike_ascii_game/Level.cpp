@@ -1,7 +1,12 @@
 #include "Level.h"
 
-Level::Level()
+Level::Level(){}
+
+Level::~Level() {}
+
+Level::Level(Player player)
 {
+	_player = player;
 	vector<string> rooms_data = LoadMapFromFile("levels/level1/1.txt");
 
 	initRooms(rooms_data);
@@ -10,38 +15,30 @@ Level::Level()
 
 void Level::initRooms(vector<string> rooms_data) 
 {
+	// TODO: load all the level's rooms
 	int room_index = 0;
-	for (int i = 0; i < rooms_data.size(); i++) 
+
+	for (int row = 0; row < rooms_data.size(); i++) 
 	{
-		string aux = rooms_data[i];
-		if (aux[0] == '/') 
-		{
-			__rooms_amount = aux[1];
-			continue;
-		}
-		if (aux[0] == ' ') 
-		{
-			room_index++;
-			continue;
-		}
-
-		_rooms[]
 	}
+
+	/*
+	//initialize the first level's room
+	vector<string> room = _rooms[0].getRoom();
+	_actual_room = room;
+	*/
 }
-
-Level::~Level(){}
-
 
 
 void Level::update() 
 {
-	_actualRoom.update();
+	int old_x = _player.getLastPosition().getX();
+	int old_y = _player.getLastPosition().getY();
+
+	int new_x = _player.getX();
+	int new_y = _player.getY();
+
+	_actual_room[old_y][old_x] = ' ';
+	_actual_room[new_y][new_x] = _player.getIdentifier();
 }
 
-
-//vector<string> Level::getActualRoom() { return _actualRoom; };
-
-void Level::setCharAt(Position, Position, char)
-{
-	
-}

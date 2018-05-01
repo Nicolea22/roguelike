@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Player.h"
+#include "Position.h"
 
 using namespace std;
 
@@ -12,17 +12,18 @@ class Room
 public:
 
 	Room();
-	Room(Player, vector<string>);
+	Room(vector<string>);
 	~Room();
 
 	void update();
+	void setRoom(vector<string>);
 
-	vector<string> getRoom() { return _room; }
 	char getCharAt(Position);
+	vector<string> getRoom() { return _room; }
 
 private:
 
 	vector <string> _room;
-	Player _player;
+
 };
 #endif

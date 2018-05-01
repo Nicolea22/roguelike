@@ -1,6 +1,7 @@
 #pragma once
 #include "Room.h"
 #include "Filemanager.h"
+#include "Player.h"
 #include <vector>
 #include <string>
 
@@ -9,19 +10,23 @@ using namespace std;
 class Level
 {
 public:
-			
+	
 	Level();
+	Level(Player player);
 	~Level();
 	
-	void setCharAt(Position, Position, char);
 	void update();
+	
+	vector<string> getActualRoom() { return _actual_room; };
 
 private:
 
 	void initRooms(vector<string>);
 
-	int __rooms_amount;
+	Player _player;
+
+	int _rooms_amount;
 	vector<Room> _rooms;
-	Room _actualRoom;
+	vector<string> _actual_room;
 
 };
