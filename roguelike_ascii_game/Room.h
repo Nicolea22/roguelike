@@ -1,9 +1,9 @@
 #ifndef ROOM_H
 #define ROOM_H
 #include <iostream>
-#include "Player.h"
 #include <vector>
 #include <string>
+#include "Player.h"
 
 using namespace std;
 
@@ -12,18 +12,17 @@ class Room
 public:
 
 	Room();
-	Room(Player);
+	Room(Player, vector<string>);
 	~Room();
 
-	void draw();
+	void update();
 
-	void setCharAt(Position, Position, char);
-
-	//vector<string> getRoom() { return room; }
+	vector<string> getRoom() { return _room; }
 	char getCharAt(Position);
 
 private:
 
 	vector <string> _room;
+	Player _player;
 };
 #endif

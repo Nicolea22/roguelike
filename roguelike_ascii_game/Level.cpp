@@ -10,19 +10,33 @@ Level::Level()
 
 void Level::initRooms(vector<string> rooms_data) 
 {
-	vector<string>::iterator it;
-	for (it = rooms_data.begin(); it != rooms_data.end(); it++) 
+	int room_index = 0;
+	for (int i = 0; i < rooms_data.size(); i++) 
 	{
-		
-	}
+		string aux = rooms_data[i];
+		if (aux[0] == '/') 
+		{
+			__rooms_amount = aux[1];
+			continue;
+		}
+		if (aux[0] == ' ') 
+		{
+			room_index++;
+			continue;
+		}
 
+		_rooms[]
+	}
 }
 
 Level::~Level(){}
 
 
 
-
+void Level::update() 
+{
+	_actualRoom.update();
+}
 
 
 //vector<string> Level::getActualRoom() { return _actualRoom; };

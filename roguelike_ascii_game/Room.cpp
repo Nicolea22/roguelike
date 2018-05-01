@@ -1,50 +1,27 @@
 #include "Room.h"
-#include "Player.h"
 
 Room::Room() {}
 
 
-Room::Room(Player player)
-{/*
-	_room = LoadMapFromFile("levels/level1/1.txt");
-
-	for (int y = 0; y < _room.size(); y++)
-	{
-		for (int x = 0; x < _room[y].size(); x++)
-		{
-			_room[player.getY()][player.getX()] = player.getIdentifier();
-		}
-	}
-*/
+Room::Room(Player player, vector<string> room)
+{
 }
-
 
 Room::~Room() {}
 
-void Room::draw()
-{/*
-	for (int y = 0; y < room.size(); y++)
-	{
-		for (int x = 0; x < room[y].size(); x++)
-		{
-			cout << room[y][x];
-		}
-		cout << endl;
-	}
-*/
-
-}
-
 char Room::getCharAt(Position pos)
 {
-	//return room[pos.getY()][pos.getX()];
+	return _room[pos.getY()][pos.getX()];
 }
 
 
-void Room::setCharAt(Position pos, Position lastPosition, char avatar)
-{
 /*
-	room[lastPosition.getY()][lastPosition.getX()] = ' ';
-	room[pos.getY()][pos.getX()] = avatar;
+* Set the new player's position
+* Set the last position as space character to erase the avatar from 
+* previous positions. The first line doesnt allow the "snake effect"
 */
+void Room::setCharAt()
+{
+	_room[lastPosition.getY()][lastPosition.getX()] = ' ';
+	_room[pos.getY()][pos.getX()] = avatar;
 }

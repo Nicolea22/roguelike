@@ -47,5 +47,5 @@ void Canvas::draw()
 void Canvas::update() 
 {
 	_player.update();
-	_actLevel.setCharAt(_player.getPosition(), _player.getLastPosition(), _player.getIdentifier());
+	_act_level.update();
 }

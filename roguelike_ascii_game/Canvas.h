@@ -21,7 +21,7 @@ private:
 	Player _player;
 	int _levels_amount;
 	vector <Level> _levels;
-	Level _actLevel;
+	Level _act_level;
 };
 
 #endif

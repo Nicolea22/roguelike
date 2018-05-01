@@ -14,14 +14,14 @@ public:
 	~Level();
 	
 	void setCharAt(Position, Position, char);
-
+	void update();
 
 private:
 
 	void initRooms(vector<string>);
 
-	int _num_rooms;
+	int __rooms_amount;
 	vector<Room> _rooms;
-	vector<string> _actualRoom;
+	Room _actualRoom;
 
 };
