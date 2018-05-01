@@ -34,6 +34,11 @@ void Canvas::draw()
 	{
 		for (int x = 0; x < room_aux[y].size(); x++)
 		{
+			if (y == _player.getY() && x == _player.getX()) 
+			{
+				cout << _player.getIdentifier();
+				continue;
+			}
 			cout << room_aux[y][x];
 		}
 		cout << endl;

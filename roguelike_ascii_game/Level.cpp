@@ -37,16 +37,5 @@ void Level::initRooms(vector<string> rooms_data)
 
 
 void Level::update() 
-{
-	_actual_room.update();
-
-	int old_x = _player.getLastPosition().getX();
-	int old_y = _player.getLastPosition().getY();
-
-	int new_x = _player.getX();
-	int new_y = _player.getY();
-
-	//_actual_room[old_y][old_x] = ' ';
-	_actual_room[new_y][new_x] = _player.getIdentifier();
-}
+{}
 

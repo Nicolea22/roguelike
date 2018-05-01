@@ -15,11 +15,6 @@ char Room::getCharAt(Position pos)
 	return _room[pos.getY()][pos.getX()];
 }
 
-void Room::update() 
-{
-	
-}
-
 void Room::setRoom(vector<string> room)
 {
 	_room = room;

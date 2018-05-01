@@ -15,7 +15,6 @@ public:
 	Room(vector<string>);
 	~Room();
 
-	void update();
 	void setRoom(vector<string>);
 
 	char getCharAt(Position);
