@@ -25,16 +25,24 @@ void Level::initRooms(vector<string> rooms_data)
 	{
 		string line = rooms_data[i];
 
-		if (line[0] == '-') 
+		if (line[0] != '-') 
 		{	
-			_rooms.push_back(aux_room);
-			aux_room.clear();
+			aux_room.push_back(line);
 			continue;
 		}
-		aux_room.push_back(line);		
-	}
-}
+		else
+		{
+			_rooms.push_back(aux_room);
+			aux_room.clear();
+		}// else	
+	}// if
+}// method
 
+
+void Level::changeLevel(int i) 
+{
+	_actual_room = _rooms[i].getRoom();
+}
 
 void Level::update() 
 {}

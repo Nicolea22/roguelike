@@ -16,6 +16,7 @@ public:
 	~Level();
 	
 	void update();
+	void changeLevel(int);
 	
 	vector<string> getActualRoom() { return _actual_room; };
 
