@@ -54,8 +54,6 @@ void Level::update(Player* player)
 		_player->setX(1);
 		_player->setY(1);
 	}
-
-	cout << (_actual_room[player->getY()][player->getX()] == '|' && _room_number == 1)<< endl;
 	
 	if (_actual_room[player->getY()][player->getX()] == '|')
 	{

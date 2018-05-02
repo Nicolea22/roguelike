@@ -10,9 +10,6 @@ int main()
 	Game game = Game();
 	game.loop();
 
-	int x;
-	cin >> x;
-
 	return 0;
 }
 
