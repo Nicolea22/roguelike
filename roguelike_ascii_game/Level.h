@@ -25,7 +25,7 @@ private:
 	void initRooms(vector<string>);
 
 	Player* _player;
-
+	int _room_number;
 	int _rooms_amount;
 	vector<Room> _rooms;
 	vector<string> _actual_room;

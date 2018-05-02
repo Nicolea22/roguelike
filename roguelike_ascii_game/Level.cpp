@@ -13,6 +13,7 @@ Level::Level(Player* player)
 	initRooms(rooms_data);
 
 	_actual_room = _rooms[0].getRoom();
+	_room_number = 0;
 }
 
 
@@ -46,12 +47,24 @@ void Level::changeLevel(int i)
 
 void Level::update(Player* player) 
 {
-	if (_actual_room[player->getY()][player->getX() + 1] == '|') 
+	if ( _actual_room[player->getY()][player->getX()] == '|' && _room_number == 0)
 	{
+		_room_number = 1;
 		changeLevel(1);
-		_player->setX(4);
+		_player->setX(1);
 		_player->setY(1);
 	}
+
+	cout << (_actual_room[player->getY()][player->getX()] == '|' && _room_number == 1)<< endl;
+	
+	if (_actual_room[player->getY()][player->getX()] == '|')
+	{
+		_room_number = 0;
+		changeLevel(0);
+		_player->setX(_actual_room[0].size() - 2);
+		_player->setY(_actual_room.size() - 3);
+	}
+
 	
 }
 
