@@ -21,10 +21,14 @@ public:
 
 	int getX() { return _position.getX(); }
 	int getY() { return _position.getY(); }
+
+	void setX(int);
+	void setY(int);
+
 	int getScore() { return _score; }
 
-	Position getPosition() { return _position; }
-	Position getLastPosition() { return _lastPosition; }
+	Position* getPosition() { return &_position; }
+	Position* getLastPosition() { return &_lastPosition; }
 
 	int getLife() { return _life; }
 	char getIdentifier() { return _identifier; }

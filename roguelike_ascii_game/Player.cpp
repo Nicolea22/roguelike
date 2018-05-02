@@ -19,9 +19,10 @@ Player::Player(Position position, char identifier, int life)
 	_score = 0;
 }
 
-
-
 Player::~Player(){}
+
+void Player::setX(int x) { _position.setX(x); }
+void Player::setY(int y) { _position.setY(y); }
 
 void Player::update(vector<string> room)
 {
@@ -49,3 +50,4 @@ void Player::update(vector<string> room)
 		break;
 	}
 }
+
