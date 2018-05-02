@@ -5,7 +5,7 @@ Canvas::Canvas() {}
 
 Canvas::Canvas(char identifier, int levelsAmount)
 {
-	_player = new Player(4, 1, identifier, 10);
+	_player = new Player(4, 1, identifier);
 	_levels_amount = levelsAmount;
 
 	_levels.push_back(Level(_player));

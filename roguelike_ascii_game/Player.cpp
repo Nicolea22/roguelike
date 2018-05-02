@@ -3,19 +3,19 @@
 
 Player::Player() {}
 
-Player::Player(int x, int y, char identifier, int life)
+Player::Player(int x, int y, char identifier)
 {
 	_identifier = identifier;	
 	_position = Position(x, y);
-	_life = life;
+	_life = 10;
 	_score = 0;
 }
 
-Player::Player(Position position, char identifier, int life)
+Player::Player(Position position, char identifier)
 {
 	_identifier = identifier;
 	_position = position;
-	_life = life;
+	_life = 10;
 	_score = 0;
 }
 

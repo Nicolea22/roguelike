@@ -12,8 +12,8 @@ class Player
 public:
 
 	Player();
-	Player(int, int, char, int);
-	Player(Position, char, int);
+	Player(int, int, char);
+	Player(Position, char);
 
 	~Player();
 
