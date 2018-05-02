@@ -1,3 +1,7 @@
 #include "Enemy.h"
 
-Enemy::Enemy(){}
+Enemy::Enemy()
+{
+	Entity::Entity();
+
+}

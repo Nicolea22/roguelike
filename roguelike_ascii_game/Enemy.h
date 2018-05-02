@@ -1,7 +1,8 @@
 #pragma once
 #include "Position.h"
+#include "Entity.h"
 
-class Enemy
+class Enemy:Entity
 {
 public:
 	Enemy();
