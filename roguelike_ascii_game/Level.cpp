@@ -44,6 +44,14 @@ void Level::changeLevel(int i)
 	_actual_room = _rooms[i].getRoom();
 }
 
-void Level::update() 
-{}
+void Level::update(Player* player) 
+{
+	if (_actual_room[player->getY()][player->getX() + 1] == '|') 
+	{
+		changeLevel(1);
+		_player->setX(4);
+		_player->setY(1);
+	}
+	
+}
 

@@ -50,5 +50,5 @@ void Canvas::draw()
 void Canvas::update() 
 {
 	_player->update(_act_level.getActualRoom());
-	_act_level.update();
+	_act_level.update(_player);
 }
