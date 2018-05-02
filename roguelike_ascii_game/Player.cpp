@@ -23,23 +23,27 @@ Player::Player(Position position, char identifier, int life)
 
 Player::~Player(){}
 
-void Player::update()
+void Player::update(vector<string> room)
 {
 	_lastPosition.setPosition(_position.getX(), _position.getY());
 	input = _getch();
 	switch (input)
 	{
 	case 'w':
-		_position.setY(_position.getY() - 1);
+		if(room[_position.getY() - 1][_position.getX()] != '#')
+			_position.setY(_position.getY() - 1);
 		break;
 	case 'a':
-		_position.setX(_position.getX() - 1);
+		if (room[_position.getY()][_position.getX() - 1] != '#')
+			_position.setX(_position.getX() - 1);
 		break;
 	case 's':
-		_position.setY(_position.getY() + 1);
+		if (room[_position.getY() + 1][_position.getX()] != '#')
+			_position.setY(_position.getY() + 1);
 		break;
 	case 'd':
-		_position.setX(_position.getX() + 1);
+		if (room[_position.getY()][_position.getX() + 1] != '#')
+			_position.setX(_position.getX() + 1);
 		break;
 	default:
 		break;

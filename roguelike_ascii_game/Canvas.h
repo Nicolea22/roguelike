@@ -18,7 +18,7 @@ public:
 	void update();
 
 private:
-	Player _player;
+	Player* _player;
 	int _levels_amount;
 	vector <Level> _levels;
 	Level _act_level;

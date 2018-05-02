@@ -5,7 +5,7 @@ Level::Level(){}
 
 Level::~Level() {}
 
-Level::Level(Player player)
+Level::Level(Player* player)
 {
 	_player = player;
 	vector<string> rooms_data = LoadMapFromFile("levels/level1/1.txt");

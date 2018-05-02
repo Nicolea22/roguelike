@@ -1,6 +1,10 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+#include <vector>
+#include <string>
 #include "Position.h"
+
+using namespace std;
 
 class Player
 {
@@ -13,7 +17,7 @@ public:
 
 	~Player();
 
-	void update();
+	void update(vector<string>);
 
 	int getX() { return _position.getX(); }
 	int getY() { return _position.getY(); }

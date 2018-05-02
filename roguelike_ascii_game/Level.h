@@ -12,7 +12,7 @@ class Level
 public:
 	
 	Level();
-	Level(Player player);
+	Level(Player* player);
 	~Level();
 	
 	void update();
@@ -24,7 +24,7 @@ private:
 
 	void initRooms(vector<string>);
 
-	Player _player;
+	Player* _player;
 
 	int _rooms_amount;
 	vector<Room> _rooms;
