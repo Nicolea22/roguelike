@@ -1,6 +1,7 @@
 #ifndef CANVAS_H
 #define CANVAS_H
 #include <iostream>
+#include <Windows.h>
 #include "Level.h"
 #include "Player.h"
 
