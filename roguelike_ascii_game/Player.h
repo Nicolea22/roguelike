@@ -3,15 +3,15 @@
 #include <vector>
 #include <string>
 #include "Position.h"
+#include "Entity.h"
 
 using namespace std;
 
-class Player
+class Player : public Entity
 {
 
 public:
 
-	Player();
 	Player(int, int, char);
 	Player(Position, char);
 
@@ -19,28 +19,13 @@ public:
 
 	void update(vector<string>);
 
-	int getX() { return _position.getX(); }
-	int getY() { return _position.getY(); }
-
-	void setX(int);
-	void setY(int);
-
 	int getScore() { return _score; }
-
-	Position* getPosition() { return &_position; }
-	Position* getLastPosition() { return &_lastPosition; }
-
 	int getLife() { return _life; }
-	char getIdentifier() { return _identifier; }
 
 private:
-	
-	char _identifier;
+
 	int _life;
 	int _score;
-
-	Position _position;
-	Position _lastPosition;
 
 	char input;
 };

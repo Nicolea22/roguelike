@@ -1,53 +1,47 @@
 #include "Player.h"
+#include <iostream>
 #include <conio.h>
 
-Player::Player() {}
-
-Player::Player(int x, int y, char identifier)
+Player::Player(int x, int y, char identifier) : Entity(x, y, identifier)
 {
-	_identifier = identifier;	
-	_position = Position(x, y);
 	_life = 10;
 	_score = 0;
 }
 
-Player::Player(Position position, char identifier)
+Player::Player(Position position, char identifier) : Entity(position, identifier)
 {
-	_identifier = identifier;
-	_position = position;
 	_life = 10;
 	_score = 0;
 }
 
 Player::~Player(){}
 
-void Player::setX(int x) { _position.setX(x); }
-void Player::setY(int y) { _position.setY(y); }
 
 void Player::update(vector<string> room)
 {
-	_lastPosition.setPosition(_position.getX(), _position.getY());
 	input = _getch();
+
 	switch (input)
 	{
 	case 'w':
-		if(room[_position.getY() - 1][_position.getX()] != '#')
-			_position.setY(_position.getY() - 1);
+		if(room[_pos.getY() - 1][_pos.getX()] != '#')
+			_pos.setY(_pos.getY() - 1);
 		break;
 	case 'a':
-		if (room[_position.getY()][_position.getX() - 1] != '#')
-			_position.setX(_position.getX() - 1);
+		if (room[_pos.getY()][_pos.getX() - 1] != '#')
+			_pos.setX(_pos.getX() - 1);
 		break;
 	case 's':
-		if (room[_position.getY() + 1][_position.getX()] != '#')
-			_position.setY(_position.getY() + 1);
+		if (room[_pos.getY() + 1][_pos.getX()] != '#')
+			_pos.setY(_pos.getY() + 1);
 		break;
 	case 'd':
-		if (room[_position.getY()][_position.getX() + 1] != '#')
-			_position.setX(_position.getX() + 1);
+		if (room[_pos.getY()][_pos.getX() + 1] != '#')
+			_pos.setX(_pos.getX() + 1);
 		break;
 	default:
 		break;
 	}
+
 }
 

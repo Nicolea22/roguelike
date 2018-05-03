@@ -55,12 +55,12 @@ void Level::update(Player* player)
 		_player->setY(1);
 	}
 	
-	if (_actual_room[player->getY()][player->getX()] == '|')
+	if (_actual_room[player->getY()][player->getX()] == '|' && _room_number == 1)
 	{
 		_room_number = 0;
 		changeLevel(0);
-		_player->setX(_actual_room[0].size() - 2);
-		_player->setY(_actual_room.size() - 3);
+		_player->setX(1);
+		_player->setY(1);
 	}
 
 	
