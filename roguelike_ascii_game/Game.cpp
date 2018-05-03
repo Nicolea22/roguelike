@@ -9,7 +9,7 @@ Game::Game()
 	inGame = true;
 	char identifier;
 
-	cout << "Please insert your character to use as an avatar" << endl;
+  	cout << "Please insert your character to use as an avatar" << endl;
 	cin >> identifier;
 	cout << endl;
 	

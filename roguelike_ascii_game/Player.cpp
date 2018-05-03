@@ -19,9 +19,9 @@ Player::~Player(){}
 
 void Player::update(vector<string> room)
 {
-	input = _getch();
+	_input = _getch();
 
-	switch (input)
+	switch (_input)
 	{
 	case 'w':
 		if(room[_pos.getY() - 1][_pos.getX()] != '#')

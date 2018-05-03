@@ -9,7 +9,6 @@ using namespace std;
 
 class Player : public Entity
 {
-
 public:
 
 	Player(int, int, char);
@@ -27,6 +26,6 @@ private:
 	int _life;
 	int _score;
 
-	char input;
+	char _input;
 };
 #endif
