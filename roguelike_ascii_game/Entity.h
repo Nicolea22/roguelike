@@ -1,6 +1,5 @@
 #ifndef ENTITY_H
 #define ENTITY_H
-
 #include "Position.h"
 
 class Entity

@@ -9,8 +9,16 @@ Canvas::Canvas(char identifier, int levelsAmount)
 	_levels_amount = levelsAmount;
 
 	_levels.push_back(Level(_player));
-
 	_act_level = _levels[0];
+
+	// set the output handle
+	handle_out = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	// set the cursor invisible
+	CONSOLE_CURSOR_INFO cursor_info;
+	GetConsoleCursorInfo(handle_out, &cursor_info);
+	cursor_info.bVisible = false;
+	SetConsoleCursorInfo(handle_out, &cursor_info);
 
 	draw_map();
 }
@@ -23,8 +31,8 @@ Canvas::~Canvas() {}
 */
 void Canvas::draw_objects()
 {
-	setCursorPosition(_player->getLastPos()->getX(), _player->getLastPos()->getY());
-	setCursorPosition(_player->getX(), _player->getY(), _player->getAvatar());
+	setCursorPosition(*_player->getLastPos());
+	setCursorPosition(*_player->getPos(), _player->getAvatar());
 
 }
 
@@ -36,7 +44,7 @@ void Canvas::draw_map()
 	{
 		for (int x = 0; x < room_aux[y].size(); x++)
 		{
-			setCursorPosition(x, y, room_aux[y][x]);
+			setCursorPosition(Position(x,y), room_aux[y][x]);
 		}
 	}
 }
@@ -47,11 +55,13 @@ void Canvas::update()
 	_act_level.update(_player);
 }
 
-void Canvas::setCursorPosition(int x, int y, char obj)
+void Canvas::setCursorPosition(Position pos, char obj)
 {
-	const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD coord = { (SHORT)x, (SHORT)y };
-	SetConsoleCursorPosition(hOut, coord);
+	SHORT x = pos.getX();
+	SHORT y = pos.getY();
+
+	coord = { (SHORT)x, (SHORT)y };
+	SetConsoleCursorPosition(handle_out, coord);
 	cout << obj;
 	cout.flush();
 

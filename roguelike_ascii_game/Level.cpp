@@ -1,5 +1,4 @@
 #include "Level.h"
-#include "Canvas.h"
 
 Level::Level(){}
 

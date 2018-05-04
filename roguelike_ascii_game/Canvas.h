@@ -20,13 +20,20 @@ public:
 	void draw_map();
 	void update();
 
-	void setCursorPosition(int, int, char obj = ' ');
+	void setCursorPosition(Position, char obj = ' ');
 
 private:
+
 	Player* _player;
+
+	HANDLE handle_out;
+	COORD coord;
+
 	int _levels_amount;
 	vector <Level> _levels;
 	Level _act_level;
+
+	
 };
 
 #endif
