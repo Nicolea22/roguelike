@@ -1,9 +1,14 @@
 #include "Entity.h"
 
+int Entity::_id_tracking = 0;
+
+
 Entity::Entity(){}
 
 Entity::Entity(int x, int y, char avatar): _avatar(avatar)
 {
+	_id = _id_tracking;
+	_id_tracking++;
 	_pos = Position(x, y);
 }
 

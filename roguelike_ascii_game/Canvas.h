@@ -25,6 +25,7 @@ public:
 private:
 
 	Player* _player;
+	ObjectHandler* obj_handler;
 
 	HANDLE handle_out;
 	COORD coord;

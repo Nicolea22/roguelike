@@ -18,6 +18,8 @@ public:
 	int getX() { return _pos.getX(); };
 	int getY() { return _pos.getY(); };
 
+	int get_id() { return _id; };
+
 	char getAvatar() { return _avatar; };
 
 	Position* getPos() { return &_pos; };
@@ -33,5 +35,7 @@ protected:
 	int _life;
 	int _damage;
 
+	static int _id_tracking;
+	int _id;
 };
 #endif

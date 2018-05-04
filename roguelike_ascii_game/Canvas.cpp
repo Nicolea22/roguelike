@@ -1,11 +1,14 @@
 #include "Canvas.h"
-#include "Debug.h"
+#include "ObjectHandler.h"
 
 Canvas::Canvas() {}
 
 Canvas::Canvas(char identifier, int levelsAmount)
 {
-	_player = new Player(4, 1, identifier);
+	obj_handler = ObjectHandler::get_instance();
+	obj_handler->add(Player(4, 1, identifier));
+	//_player = new Player(4, 1, identifier);
+
 	_levels_amount = levelsAmount;
 
 	_levels.push_back(Level(_player));
@@ -30,10 +33,13 @@ Canvas::~Canvas() {}
 *	Draw all the game's objects, even the map
 */
 void Canvas::draw_objects()
-{
+{	
+	
+	obj_handler->draw();
+	/*
 	setCursorPosition(*_player->getLastPos());
 	setCursorPosition(*_player->getPos(), _player->getAvatar());
-
+	*/
 }
 
 void Canvas::draw_map() 
@@ -51,8 +57,10 @@ void Canvas::draw_map()
 
 void Canvas::update()
 {
+	/*
 	_player->update(_act_level.getActualRoom());
 	_act_level.update(_player);
+	*/
 }
 
 void Canvas::setCursorPosition(Position pos, char obj)
@@ -62,6 +70,7 @@ void Canvas::setCursorPosition(Position pos, char obj)
 
 	coord = { (SHORT)x, (SHORT)y };
 	SetConsoleCursorPosition(handle_out, coord);
+
 	cout << obj;
 	cout.flush();
 
