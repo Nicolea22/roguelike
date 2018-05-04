@@ -16,10 +16,11 @@ public:
 	~Canvas();
 
 	
-	void draw();
+	void draw_objects();
+	void draw_map();
 	void update();
 
-	void setCursorPosition(int, int, char);
+	void setCursorPosition(int, int, char obj = ' ');
 
 private:
 	Player* _player;

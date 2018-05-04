@@ -19,6 +19,8 @@ Player::~Player(){}
 
 void Player::update(vector<string> room)
 {
+	_last_pos.setPosition(getX(), getY());
+	
 	_input = _getch();
 
 	switch (_input)

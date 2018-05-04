@@ -25,7 +25,7 @@ void Game::update()
 
 void Game::draw()
 {
-	canvas.draw();
+	canvas.draw_objects();
 }
 
 void Game::clearScreen()
@@ -38,7 +38,6 @@ void Game::loop()
 {
 	while (inGame)
 	{
-		clearScreen();
 		draw();
 		update();
 	}
