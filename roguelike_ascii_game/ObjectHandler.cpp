@@ -1,31 +1,30 @@
 #include "ObjectHandler.h"
-
-
-ObjectHandler* ObjectHandler::get_instance() 
-{
-	if (instance == 0)
-		instance = new ObjectHandler();
-	
-	return instance;
-}
+#include "Player.h"
 
 ObjectHandler::ObjectHandler()
-{}
+{
+	
+}
 
-ObjectHandler::~ObjectHandler()
-{}
-
+ObjectHandler::~ObjectHandler(){}
 
 void ObjectHandler::draw() 
 {
-	for (int i = 0; i < objects.size(); i++) 
+	for (int i = 0; i < objects.size(); i++)
 	{
-		objects.at(i).update();
+		objects.at(i).draw();
 	}
 }
 
 void ObjectHandler::update()
-{}
+{
+	
+	for (int i = 0; i < objects.size(); i++)
+	{
+		objects.at(i).update();
+	}
+
+}
 
 void ObjectHandler::add(Entity obj) 
 {
@@ -35,7 +34,5 @@ void ObjectHandler::add(Entity obj)
 void ObjectHandler::delete_from_list(Entity obj)
 {
 	for (int i = 0; i < objects.size(); i++) 
-	{
-		if (objects.at(i).get_id() == obj.get_id());
-	}
+	{	}
 }

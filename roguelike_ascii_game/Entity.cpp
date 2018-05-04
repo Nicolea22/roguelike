@@ -19,3 +19,9 @@ Entity::~Entity(){}
 
 void Entity::setX(int x) { _pos.setX(x); }
 void Entity::setY(int y){ _pos.setY(y); }
+
+
+void Entity::draw() 
+{
+	draw_obj(_pos, getAvatar());
+}

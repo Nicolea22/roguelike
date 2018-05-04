@@ -1,9 +1,8 @@
 #pragma once
 #include "Room.h"
-#include "Filemanager.h"
 #include "Player.h"
-#include <vector>
-#include <string>
+#include "Drawable.h"
+
 
 using namespace std;
 
@@ -16,9 +15,11 @@ public:
 	~Level();
 	
 	void update(Player*);
+	void draw();
+
 	void changeLevel(int);
 	
-	vector<string> getActualRoom() { return _actual_room; };
+	Room getActualRoom() { return _actual_room; };
 
 private:
 
@@ -28,6 +29,6 @@ private:
 	int _room_number;
 	int _rooms_amount;
 	vector<Room> _rooms;
-	vector<string> _actual_room;
+	Room _actual_room;
 
 };

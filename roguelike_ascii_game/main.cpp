@@ -9,7 +9,6 @@ int main()
 {
 	Game game = Game();
 	game.loop();
-
 	return 0;
 }
 

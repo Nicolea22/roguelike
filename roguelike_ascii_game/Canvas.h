@@ -2,6 +2,7 @@
 #define CANVAS_H
 #include <iostream>
 #include <Windows.h>
+#include "ObjectHandler.h"
 #include "Level.h"
 #include "Player.h"
 
@@ -20,15 +21,12 @@ public:
 	void draw_map();
 	void update();
 
-	void setCursorPosition(Position, char obj = ' ');
-
 private:
 
 	Player* _player;
 	ObjectHandler* obj_handler;
 
 	HANDLE handle_out;
-	COORD coord;
 
 	int _levels_amount;
 	vector <Level> _levels;
@@ -36,5 +34,4 @@ private:
 
 	
 };
-
 #endif

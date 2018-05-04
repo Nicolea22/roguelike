@@ -1,9 +1,2 @@
 ﻿  Canvas.cpp
-c:\users\leandro\source\repos\roguelike_ascii_game\roguelike_ascii_game\canvas.cpp(33): warning C4018: '<': no coinciden signed/unsigned
-c:\users\leandro\source\repos\roguelike_ascii_game\roguelike_ascii_game\canvas.cpp(35): warning C4018: '<': no coinciden signed/unsigned
-  Game.cpp
-  Level.cpp
-c:\users\leandro\source\repos\roguelike_ascii_game\roguelike_ascii_game\level.cpp(24): warning C4018: '<': no coinciden signed/unsigned
-  main.cpp
-  Generando código...
-  roguelike_ascii_game.vcxproj -> C:\Users\Leandro\source\repos\roguelike_ascii_game\Debug\roguelike_ascii_game.exe
+  roguelike_ascii_game.vcxproj -> C:\Users\Leandro\source\repos\roguelike\Debug\roguelike_ascii_game.exe

@@ -2,18 +2,21 @@
 #define ROOM_H
 #include <iostream>
 #include <vector>
-#include <string>
 #include "Position.h"
+#include "Drawable.h"
 
 using namespace std;
 
-class Room
+class Room : public Drawable
 {
 public:
 
 	Room();
 	Room(vector<string>);
 	~Room();
+
+	void update();
+	void draw();
 
 	void setRoom(vector<string>);
 

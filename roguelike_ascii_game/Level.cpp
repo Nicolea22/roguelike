@@ -1,4 +1,5 @@
 #include "Level.h"
+#include "Filemanager.h"
 
 Level::Level(){}
 
@@ -11,7 +12,7 @@ Level::Level(Player* player)
 
 	initRooms(rooms_data);
 
-	_actual_room = _rooms[0].getRoom();
+	_actual_room = _rooms[0];
 	_room_number = 0;
 }
 
@@ -41,12 +42,20 @@ void Level::initRooms(vector<string> rooms_data)
 
 void Level::changeLevel(int i) 
 {
-	_actual_room = _rooms[i].getRoom();
+	_actual_room = _rooms[i];
+}
+
+
+void Level::draw() 
+{
+	_actual_room.draw();
 }
 
 void Level::update(Player* player) 
 {
-	if ( _actual_room[player->getY()][player->getX()] == '|' && _room_number == 0)
+	vector<string> aux_room = _actual_room.getRoom();
+
+	if (aux_room[player->getY()][player->getX()] == '|' && _room_number == 0)
 	{
 		_room_number = 1;
 		changeLevel(1);
@@ -54,14 +63,12 @@ void Level::update(Player* player)
 		_player->setY(1);
 	}
 	
-	if (_actual_room[player->getY()][player->getX()] == '|' && _room_number == 1)
+	if (aux_room[player->getY()][player->getX()] == '|' && _room_number == 1)
 	{
 		_room_number = 0;
 		changeLevel(0);
 		_player->setX(1);
 		_player->setY(1);
 	}
-
-	
 }
 

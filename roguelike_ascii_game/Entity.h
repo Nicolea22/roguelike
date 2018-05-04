@@ -1,8 +1,9 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 #include "Position.h"
+#include "Drawable.h"
 
-class Entity
+class Entity: public Drawable
 {
 public:
 
@@ -11,6 +12,9 @@ public:
 	Entity(Position, char);
 
 	~Entity();
+
+	void draw();
+	void update() {};
 
 	void setX(int);
 	void setY(int);

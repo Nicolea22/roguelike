@@ -38,7 +38,7 @@ void Game::loop()
 {
 	while (inGame)
 	{
-		//draw();
+		draw();
 		update();
 	}
 }

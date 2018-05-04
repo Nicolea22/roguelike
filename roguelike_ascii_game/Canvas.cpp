@@ -1,13 +1,12 @@
 #include "Canvas.h"
-#include "ObjectHandler.h"
 
 Canvas::Canvas() {}
 
 Canvas::Canvas(char identifier, int levelsAmount)
 {
-	obj_handler = ObjectHandler::get_instance();
-	obj_handler->add(Player(4, 1, identifier));
-	//_player = new Player(4, 1, identifier);
+	obj_handler = new ObjectHandler();
+	
+	_player = new Player(4, 1, identifier);
 
 	_levels_amount = levelsAmount;
 
@@ -34,8 +33,12 @@ Canvas::~Canvas() {}
 */
 void Canvas::draw_objects()
 {	
-	
+	//_act_level.draw();
 	obj_handler->draw();
+
+	_player->draw_obj(*_player->getLastPos());
+	_player->draw_obj(*_player->getPos(), _player->getAvatar());
+
 	/*
 	setCursorPosition(*_player->getLastPos());
 	setCursorPosition(*_player->getPos(), _player->getAvatar());
@@ -44,34 +47,15 @@ void Canvas::draw_objects()
 
 void Canvas::draw_map() 
 {
-	vector<string> room_aux = _act_level.getActualRoom();
-
-	for (int y = 0; y < room_aux.size(); y++)
-	{
-		for (int x = 0; x < room_aux[y].size(); x++)
-		{
-			setCursorPosition(Position(x,y), room_aux[y][x]);
-		}
-	}
+	_act_level.draw();
 }
 
 void Canvas::update()
 {
-	/*
-	_player->update(_act_level.getActualRoom());
+
+	obj_handler->update();
+
+	_player->update(_act_level.getActualRoom().getRoom());
 	_act_level.update(_player);
-	*/
-}
-
-void Canvas::setCursorPosition(Position pos, char obj)
-{
-	SHORT x = pos.getX();
-	SHORT y = pos.getY();
-
-	coord = { (SHORT)x, (SHORT)y };
-	SetConsoleCursorPosition(handle_out, coord);
-
-	cout << obj;
-	cout.flush();
-
+	
 }

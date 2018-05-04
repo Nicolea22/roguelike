@@ -16,7 +16,6 @@ Player::Player(Position position, char identifier) : Entity(position, identifier
 
 Player::~Player(){}
 
-
 void Player::update(vector<string> room)
 {
 	_last_pos.setPosition(getX(), getY());
@@ -26,7 +25,7 @@ void Player::update(vector<string> room)
 	switch (_input)
 	{
 	case 'w':
-		if(room[_pos.getY() - 1][_pos.getX()] != '#')
+		if (room[_pos.getY() - 1][_pos.getX()] != '#')
 			_pos.setY(_pos.getY() - 1);
 		break;
 	case 'a':

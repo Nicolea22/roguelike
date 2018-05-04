@@ -7,25 +7,18 @@ using namespace std;
 
 class ObjectHandler : public Drawable
 {
-
-private:
-
-	static ObjectHandler* instance;
+public:
 
 	ObjectHandler();
 	~ObjectHandler();
-
-	vector<Entity> objects;
-
-public:
-
-	static ObjectHandler* get_instance();
 
 	void draw();
 	void update();
 	void add(Entity);
 	void delete_from_list(Entity);
 
+private:
 
+	vector<Entity> objects;
 
 };
